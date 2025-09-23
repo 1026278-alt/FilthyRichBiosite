@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filthy Rich</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    body {
+      background-color: #f0ead6; /* eggshell background */
+      color: #1d3215;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    /* Animated Headline */
+    .headline {
+      text-align: center;
+      background: #9aa982; /* headline background */
+      color: #ffdc74; /* headline text color */
+      font-family: 'Cinzel Decorative', cursive;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 20px;
+      font-size: 50px;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 80px;
+    }
+
+    .headline span {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      opacity: 0;
+      animation: fadeText 9s linear infinite 0s;
+    }
+
+    .headline span:nth-child(2) { animation-delay: 3s; }
+    .headline span:nth-child(3) { animation-delay: 6s; }
+
+    @keyframes fadeText {
+      0%, 40%, 100% { opacity: 0; }
+      10%, 30% { opacity: 1; }
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: transparent;
+      font-size: 25px;
+      text-align: center;
+      padding: 10px 0;
+      font-family: 'Cinzel Decorative', cursive;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: #ffdc74;
+      text-decoration: none;
+      margin: 0 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 3px solid #9aa982;
+      display: inline-block;
+      line-height: 1.1;
+    }
+
+    nav a:hover {
+      color: #9aa982;
+    }
+
+    nav span {
+      color: #9aa982;
+      font-weight: bold;
+    }
+
+    /* Center Image */
+    .center-image {
+      width: 80%;
+      max-width: 1200px;
+      height: auto;
+      display: block;
+      margin: 40px auto;
+      border-radius: 10px;
+    }
+
+    /* Three Columns Section */
+    .columns-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      width: 80%;
+      max-width: 1200px;
+      margin: 40px auto;
+      gap: 20px;
+    }
+
+    .threecolumns {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      background-color: #ffffff40;
+      border-radius: 10px;
+      box-sizing: border-box;
+      margin: 10px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .threecolumns:hover {
+      box-shadow: 0px 0px 5px 5px #cccccc;
+    }
+
+    .threecolumns img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .threecolumns a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #9aa982;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .threecolumns a:hover {
+      color: #ffdc74;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #9aa982; /* same as headline */
+      color: #ffdc74; /* same as headline text */
+      text-align: center;
+      padding: 15px;
+      width: 100%;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Headline -->
+  <div class="headline">
+    <span>Where Wealth Meets Style</span>
+    <span>Give Filthy Rich a Dial</span>
+    <span>Here at Filthy Rich Industries</span>
+  </div>
+
+  <!-- Navigation bar -->
+  <nav>
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/HomeFilthy.html">Home</a>
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/AboutmeFilthy.html">About Me</a>
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/FavoritetThingsFilthy.html">Favorite Things</a>
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/ContactMeFilthy.html">Contact Me</a> <span>|</span>
+  </nav>
+
+  <!-- Main Center Image -->
+  <img src="FILTHYRICHIMG.jpg" alt="Filthy Rich" class="center-image">
+
+  <!-- Three Columns Section -->
+  <main>
+    <div class="columns-container">
+      <div class="threecolumns">
+        <img src="about.jpg" alt="About Me Image">
+        <h2>About Me</h2>
+        <p>A little introduction about me and my background.</p>
+        <a href="file:///Users/1026278/Documents/Filthy/AboutmeFilthy.html">Learn More</a>
+      </div>
+
+      <div class="threecolumns">
+        <img src="favorite.jpg" alt="Favorite Things Image">
+        <h2>My Favorite Things</h2>
+        <p>Check out the things I enjoy most in life.</p>
+        <a href="file:///Users/1026278/Documents/Filthy/FavoritetThingsFilthy.html">See More</a>
+      </div>
+
+      <div class="threecolumns">
+        <img src="contact.jpg" alt="Contact Me Image">
+        <h2>Contact Me</h2>
+        <p>If you’d like to hire me or have more questions, here’s my info so we can connect.</p>
+        <a href="file:///Users/1026278/Documents/Filthy/ContactMeFilthy.html">Get in Touch</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Filthy Rich Industries | Designed by Me</p>
+  </footer>
+
+</body>
+</html>
