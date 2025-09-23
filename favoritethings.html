@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filthy Rich - Favorite Things</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0ead6; /* eggshell background */
+      margin: 0; 
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      color: #ffdc74; /* matches headline text */
+    }
+
+    .headline {
+      text-align: center;
+      background: #9aa982;
+      color: #ffdc74;
+      font-family: 'Cinzel Decorative', cursive; 
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 20px;
+      font-size: 50px;
+      position: relative;
+      overflow: hidden;
+      height: 80px;
+      width: 100%;
+    }
+
+    .headline span {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      opacity: 0;
+      animation: fadeText 9s linear infinite 0s;
+    }
+
+    .headline span:nth-child(2) { animation-delay: 3s; }
+    .headline span:nth-child(3) { animation-delay: 6s; }
+
+    @keyframes fadeText {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      40% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* Navigation bar */
+    .navbar {
+      background-color: transparent;
+      font-size: 25px;
+      text-align: center;
+      padding: 10px 0;
+      font-family: 'Cinzel Decorative', cursive; 
+      font-weight: 700;
+    }
+
+    /* Styled nav buttons */
+    .navbar a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: 2px solid #ffdc74;
+      border-radius: 8px;
+      color: #ffdc74;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #ffdc74;
+      color: #9aa982;
+    }
+
+    .navbar span {
+      color: #9aa982;
+      font-weight: bold;
+    }
+
+    /* Gallery intro */
+    .gallery-intro {
+      font-size: 22px;
+      color: #ffdc74;
+      margin: 30px 0 10px 0;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    /* Gallery grid */
+    .my-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 1000px;
+      margin-bottom: 50px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid #9aa982;
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox/modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-modal img {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 5px;
+    }
+
+    .lightbox-modal .close-btn {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .my-gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media screen and (max-width: 480px) {
+      .my-gallery { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Headline -->
+  <div class="headline">
+    <span>Where Wealth Meets Style</span>
+    <span>Give Filthy Rich a Dial</span>
+    <span>Here at Filthy Rich Industries</span>
+  </div>
+  
+  <!-- Navigation -->
+  <div class="navbar"> 
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/HomeFilthy.html">Home</a> 
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/AboutmeFilthy.html">About Me</a> 
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/FavoritetThingsFilthy.html">Favorite Things</a> 
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/ContactMeFilthy.html">Contact Me</a> <span>|</span>
+  </div> 
+
+  <!-- Gallery intro -->
+  <p class="gallery-intro">Here are some of my favorite things showcased in a gallery. Click to enlarge each one!</p>
+
+  <!-- Gallery grid -->
+  <div class="my-gallery">
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x300?text=Item+1" alt="Favorite Thing 1" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x300?text=Item+2" alt="Favorite Thing 2" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x300?text=Item+3" alt="Favorite Thing 3" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x300?text=Item+4" alt="Favorite Thing 4" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x300?text=Item+5" alt="Favorite Thing 5" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x300?text=Item+6" alt="Favorite Thing 6" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x300?text=Item+7" alt="Favorite Thing 7" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x300?text=Item+8" alt="Favorite Thing 8" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x300?text=Item+9" alt="Favorite Thing 9" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+  <!-- Lightbox modal -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <img id="modalImg" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(element) {
+      document.getElementById("lightboxModal").style.display = "block";
+      document.getElementById("modalImg").src = element.src;
+      document.getElementById("modalImg").alt = element.alt;
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightboxModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside the image
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("lightboxModal")) {
+        closeLightbox();
+      }
+    }
+  </script>
+
+</body>
+</html>

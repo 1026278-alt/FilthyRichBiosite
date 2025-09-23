@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me - Filthy Rich</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f0ead6; /* eggshell background */
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 0 20px;
+    }
+
+    /* Headline */
+    .headline {
+      text-align: center;
+      background: #9aa982;
+      color: #ffdc74;
+      font-family: 'Cinzel Decorative', cursive;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 20px;
+      font-size: 50px;
+      position: relative;
+      overflow: hidden;
+      height: 80px;
+      width: 100%;
+    }
+
+    .headline span {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      opacity: 0;
+      animation: fadeText 9s linear infinite 0s;
+    }
+
+    .headline span:nth-child(2) { animation-delay: 3s; }
+    .headline span:nth-child(3) { animation-delay: 6s; }
+
+    @keyframes fadeText {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      40% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* Navigation bar */
+    .navbar {
+      background-color: transparent;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px 0;
+      font-family: 'Cinzel Decorative', cursive;
+      font-weight: 700;
+    }
+
+    /* Styled nav buttons */
+    .navbar a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: 2px solid #ffdc74;
+      border-radius: 8px;
+      color: #ffdc74;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #ffdc74;
+      color: #9aa982;
+    }
+
+    .navbar span {
+      color: #9aa982;
+      font-weight: bold;
+    }
+
+    /* Paragraph styling */
+    .about-paragraph {
+      max-width: 800px;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 10px;
+      color: #333;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .para1 { background-color: #e7e4d9; } /* subtle cream */
+    .para2 { background-color: #dce3c9; } /* light greenish */
+    .para3 { background-color: #f2e6d9; } /* light peach */
+
+    /* Video styling */
+    .video-container {
+      max-width: 800px;
+      margin: 30px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    /* Image styling */
+    .styled-image {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      margin: 20px 0;
+    }
+
+    /* External link */
+    .external-link {
+      color: #ffdc74;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .external-link:hover {
+      color: #9aa982;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Headline -->
+  <div class="headline">
+    <span>Where Wealth Meets Style</span>
+    <span>Give Filthy Rich a Dial</span>
+    <span>Here at Filthy Rich Industries</span>
+  </div>
+
+  <!-- Navigation bar -->
+  <div class="navbar"> 
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/HomeFilthy.html">Home</a> 
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/AboutmeFilthy.html">About Me</a> 
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/FavoritetThingsFilthy.html">Favorite Things</a> 
+    <span>|</span> <a href="file:///Users/1026278/Documents/Filthy/ContactMeFilthy.html">Contact Me</a> <span>|</span>
+  </div> 
+
+  <!-- About paragraphs -->
+  <div class="about-paragraph para1">
+    Hi! I’m Angel, a passionate web and graphic designer. I love creating modern websites with unique styles and clean layouts. My skills include HTML, CSS, and a bit of JavaScript for interactive projects.
+  </div>
+
+  <div class="about-paragraph para2">
+    When I’m not coding, I enjoy exploring design tools like Photoshop and Illustrator to craft eye-catching graphics. I also like experimenting with animations and video editing to make my projects more dynamic.
+  </div>
+
+  <div class="about-paragraph para3">
+    Beyond design, I love sports, music, and staying active. I constantly seek inspiration from both the digital world and everyday life to keep my creativity fresh.
+  </div>
+
+  <!-- Embedded video -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="My favorite video" allowfullscreen></iframe>
+  </div>
+
+  <!-- Styled image -->
+  <img src="https://via.placeholder.com/400x250.png?text=Me+at+Work" alt="Me working on design" class="styled-image">
+
+  <!-- External link -->
+  <p>Check out my favorite design resource: 
+    <a href="https://www.behance.net" target="_blank" class="external-link">Behance</a>
+  </p>
+
+</body>
+</html>
