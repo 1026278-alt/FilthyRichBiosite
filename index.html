@@ -10,7 +10,7 @@
   <style>
     /* Global Styles */
     body {
-      background-color: #f0ead6; /* eggshell background */
+      background-color: #f0ead6;
       color: #1d3215;
       margin: 0;
       font-family: Arial, sans-serif;
@@ -23,8 +23,8 @@
     /* Animated Headline */
     .headline {
       text-align: center;
-      background: #9aa982; /* headline background */
-      color: #ffdc74; /* headline text color */
+      background: #9aa982;
+      color: #ffdc74;
       font-family: 'Cinzel Decorative', cursive;
       font-weight: 700;
       letter-spacing: 2px;
@@ -85,7 +85,7 @@
 
     /* Center Image */
     .center-image {
-      width: 80%;
+      width: 90%;
       max-width: 1200px;
       height: auto;
       display: block;
@@ -93,54 +93,73 @@
       border-radius: 10px;
     }
 
-    /* Three Columns Section */
+    /* Three Columns Section (Bigger Version) */
     .columns-container {
       display: flex;
       justify-content: space-between;
       align-items: stretch;
-      width: 80%;
-      max-width: 1200px;
-      margin: 40px auto;
-      gap: 20px;
+      width: 95%;
+      max-width: 1600px; /* wider container */
+      margin: 50px auto;
+      gap: 30px;
     }
 
     .threecolumns {
-      flex: 1;
+      flex: 1 1 0;
       text-align: center;
-      padding: 20px;
-      background-color: #ffffff40;
-      border-radius: 10px;
+      padding: 30px;
+      background-color: #ffffff60;
+      border-radius: 15px;
       box-sizing: border-box;
-      margin: 10px;
-      transition: box-shadow 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      font-size: 18px; /* larger text */
     }
 
     .threecolumns:hover {
-      box-shadow: 0px 0px 5px 5px #cccccc;
+      box-shadow: 0px 0px 15px 6px #cccccc;
+      transform: translateY(-5px);
     }
 
     .threecolumns img {
       width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
+      height: 250px; /* taller images */
+      border-radius: 10px;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+
+    .threecolumns h2 {
+      font-size: 28px;
+      margin: 15px 0;
+    }
+
+    .threecolumns p {
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     .threecolumns a {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 15px;
       color: #9aa982;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
 
     .threecolumns a:hover {
       color: #ffdc74;
     }
 
+    /* Favorite Things column (middle, bigger) */
+    .favorite-column {
+      flex: 1.5; /* noticeably wider */
+    }
+
     /* Footer */
     footer {
-      background-color: #9aa982; /* same as headline */
-      color: #ffdc74; /* same as headline text */
+      background-color: #9aa982;
+      color: #ffdc74;
       text-align: center;
       padding: 15px;
       width: 100%;
@@ -159,27 +178,29 @@
 
   <!-- Navigation bar -->
   <nav>
-    <span>|</span> <a href="HomeFilthy.html">Home</a>
-    <span>|</span> <a href="AboutmeFilthy.html">About Me</a>
-    <span>|</span> <a href="FavoritetThingsFilthy.html">Favorite Things</a>
-    <span>|</span> <a href="ContactMeFilthy.html">Contact Me</a> <span>|</span>
+    <span>|</span> <a href="index.html">Home</a>
+    <span>|</span> <a href="aboutme.html">About Me</a>
+    <span>|</span> <a href="favoritethings.html">Favorite Things</a>
+    <span>|</span> <a href="contactme.html">Contact Me</a> <span>|</span>
   </nav>
 
   <!-- Main Center Image -->
-  <img src="FILTHYRICHIMG.jpg" alt="Filthy Rich" class="center-image">
+  <img src="img1.jpg" alt="Filthy Rich" class="center-image">
 
   <!-- Three Columns Section -->
   <main>
     <div class="columns-container">
       <div class="threecolumns">
         <img src="about.jpg" alt="About Me Image">
+        <img src="IMG_2796.jpg" alt="Graduation Photo">
         <h2>About Me</h2>
         <p>A little introduction about me and my background.</p>
         <a href="AboutmeFilthy.html">Learn More</a>
       </div>
 
-      <div class="threecolumns">
+      <div class="threecolumns favorite-column">
         <img src="favorite.jpg" alt="Favorite Things Image">
+        <img src="DSC_0012.png" alt="Truck Photo">
         <h2>My Favorite Things</h2>
         <p>Check out the things I enjoy most in life.</p>
         <a href="FavoritetThingsFilthy.html">See More</a>
@@ -187,6 +208,7 @@
 
       <div class="threecolumns">
         <img src="contact.jpg" alt="Contact Me Image">
+        <img src="IMG_5737.jpg" alt="Contact Photo">
         <h2>Contact Me</h2>
         <p>If you’d like to hire me or have more questions, here’s my info so we can connect.</p>
         <a href="ContactMeFilthy.html">Get in Touch</a>
