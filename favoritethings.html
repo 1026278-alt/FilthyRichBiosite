@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Filthy Rich - Favorite Things</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #f0ead6;
-      margin: 0; 
+      margin: 0;
       font-family: Arial, sans-serif;
+      color: #ffdc74;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
       min-height: 100vh;
-      color: #ffdc74;
     }
 
+    /* Headline */
     .headline {
       text-align: center;
       background: #9aa982;
       color: #ffdc74;
-      font-family: 'Cinzel Decorative', cursive; 
+      font-family: 'Cinzel Decorative', cursive;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -51,12 +52,13 @@
       100% { opacity: 0; }
     }
 
+    /* Navbar */
     .navbar {
       background-color: transparent;
       font-size: 25px;
       text-align: center;
       padding: 10px 0;
-      font-family: 'Cinzel Decorative', cursive; 
+      font-family: 'Cinzel Decorative', cursive;
       font-weight: 700;
     }
 
@@ -81,49 +83,60 @@
       font-weight: bold;
     }
 
-    .gallery-intro {
-      font-size: 22px;
-      color: #ffdc74;
-      margin: 30px 0 10px 0;
-      text-align: center;
-      max-width: 80%;
-    }
-
-    .my-gallery {
+    /* Gallery grid */
+    .gallery-container {
+      max-width: 1200px;
+      width: 90%;
+      margin: 50px auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      max-width: 1000px;
-      margin-bottom: 50px;
+      gap: 30px;
     }
 
-    .gallery-item img {
+    .gallery-card {
+      background: #b8c9a5; /* lighter green background */
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      color: #ffdc74; /* yellow text */
+      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .gallery-card img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: contain;
-      cursor: pointer;
-      border: 2px solid #9aa982;
-      border-radius: 5px;
-      transition: transform 0.3s;
+      border-radius: 12px;
+      margin-bottom: 15px;
       background: transparent;
+      transition: transform 0.3s;
     }
 
-    .gallery-item img:hover {
+    .gallery-card img:hover {
       transform: scale(1.05);
     }
 
-    .gallery-item img[alt="Filthy Rich Logo"],
-    .gallery-item img[alt="BMC Capital Logo"] {
-      border: none !important;
-      border-radius: 50% !important;
-      padding: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-      max-width: 220px;
-      max-height: 220px;
-      object-fit: contain;
-      background: transparent !important;
+    .gallery-card h3 {
+      margin: 10px 0 5px 0;
+      font-size: 22px;
     }
 
+    .gallery-card p {
+      font-size: 16px;
+      line-height: 1.4;
+      color: #fff6c8;
+    }
+
+    /* Lightbox modal */
     .lightbox-modal {
       display: none;
       position: fixed;
@@ -155,12 +168,14 @@
       cursor: pointer;
     }
 
-    @media screen and (max-width: 768px) {
-      .my-gallery { grid-template-columns: repeat(2, 1fr); }
+    /* Responsive */
+    @media screen and (max-width: 992px) {
+      .gallery-container { grid-template-columns: repeat(2, 1fr); }
     }
 
-    @media screen and (max-width: 480px) {
-      .my-gallery { grid-template-columns: 1fr; }
+    @media screen and (max-width: 600px) {
+      .gallery-container { grid-template-columns: 1fr; }
+      .gallery-card img { height: 180px; }
     }
   </style>
 </head>
@@ -179,35 +194,56 @@
     <span>|</span> <a href="contactme.html">Contact Me</a> <span>|</span>
   </div> 
 
-  <p class="gallery-intro">Here are some of my favorite things showcased in a gallery. Click to enlarge each one!</p>
-
-  <div class="my-gallery">
-    <div class="gallery-item">
+  <div class="gallery-container">
+    <!-- Row 1 -->
+    <div class="gallery-card">
       <img src="https://via.placeholder.com/400x300?text=Item+1" alt="Favorite Thing 1" onclick="openLightbox(this)">
+      <h3>Favorite Thing 1</h3>
+      <p>Description of favorite thing 1.</p>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-card">
       <img src="https://via.placeholder.com/400x300?text=Item+2" alt="Favorite Thing 2" onclick="openLightbox(this)">
+      <h3>Favorite Thing 2</h3>
+      <p>Description of favorite thing 2.</p>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-card">
       <img src="https://via.placeholder.com/400x300?text=Item+3" alt="Favorite Thing 3" onclick="openLightbox(this)">
+      <h3>Favorite Thing 3</h3>
+      <p>Description of favorite thing 3.</p>
     </div>
-    <div class="gallery-item">
-      <img src="https://via.placeholder.com/400x300?text=Item+4" alt="Favorite Thing 4" onclick="openLightbox(this)">
-    </div>
-    <div class="gallery-item">
+
+    <!-- Row 2 -->
+    <div class="gallery-card">
       <img src="FILTHYCIRCLE.png" alt="Filthy Rich Logo" onclick="openLightbox(this)">
+      <h3>Filthy Rich Logo</h3>
+      <p>The iconic Filthy Rich logo representing style and brand.</p>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-card">
       <img src="BMC.png" alt="BMC Capital Logo" onclick="openLightbox(this)">
+      <h3>BMC Capital Logo</h3>
+      <p>Logo representing a company/project I admire.</p>
     </div>
-    <div class="gallery-item">
-      <img src="https://via.placeholder.com/400x300?text=Item+7" alt="Favorite Thing 7" onclick="openLightbox(this)">
-    </div>
-    <div class="gallery-item">
+    <div class="gallery-card">
       <img src="FINAL REACH PROJECT.png" alt="Food Drive Poster" onclick="openLightbox(this)">
+      <h3>Food Drive Poster</h3>
+      <p>Poster from a community food drive project I contributed to.</p>
     </div>
-    <div class="gallery-item">
+
+    <!-- Row 3 -->
+    <div class="gallery-card">
+      <img src="https://via.placeholder.com/400x300?text=Item+7" alt="Favorite Thing 7" onclick="openLightbox(this)">
+      <h3>Favorite Thing 7</h3>
+      <p>Description of favorite thing 7.</p>
+    </div>
+    <div class="gallery-card">
+      <img src="https://via.placeholder.com/400x300?text=Item+8" alt="Favorite Thing 8" onclick="openLightbox(this)">
+      <h3>Favorite Thing 8</h3>
+      <p>Description of favorite thing 8.</p>
+    </div>
+    <div class="gallery-card">
       <img src="https://via.placeholder.com/400x300?text=Item+9" alt="Favorite Thing 9" onclick="openLightbox(this)">
+      <h3>Favorite Thing 9</h3>
+      <p>Description of favorite thing 9.</p>
     </div>
   </div>
 
