@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Filthy Rich</title>
-  
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
 
@@ -45,8 +45,13 @@
       animation: fadeText 9s linear infinite 0s;
     }
 
-    .headline span:nth-child(2) { animation-delay: 3s; }
-    .headline span:nth-child(3) { animation-delay: 6s; }
+    .headline span:nth-child(2) {
+      animation-delay: 3s;
+    }
+
+    .headline span:nth-child(3) {
+      animation-delay: 6s;
+    }
 
     @keyframes fadeText {
       0%, 40%, 100% { opacity: 0; }
@@ -86,74 +91,61 @@
     /* Center Image */
     .center-image {
       width: 90%;
-      max-width: 1200px;
+      max-width: 1000px;
       height: auto;
       display: block;
       margin: 40px auto;
       border-radius: 10px;
     }
 
-    /* Three Columns Section (Bigger Version) */
+    /* Three Columns Section */
     .columns-container {
       display: flex;
       justify-content: space-between;
-      align-items: stretch;
-      width: 95%;
-      max-width: 1600px; /* wider container */
-      margin: 50px auto;
-      gap: 30px;
+      align-items: flex-start;
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+      gap: 15px;
     }
 
     .threecolumns {
-      flex: 1 1 0;
+      flex: 1;
       text-align: center;
-      padding: 30px;
-      background-color: #ffffff60;
-      border-radius: 15px;
+      padding: 15px;
+      background-color: #ffffff40;
+      border-radius: 10px;
       box-sizing: border-box;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      font-size: 18px; /* larger text */
+      transition: box-shadow 0.3s ease;
     }
 
     .threecolumns:hover {
-      box-shadow: 0px 0px 15px 6px #cccccc;
-      transform: translateY(-5px);
+      box-shadow: 0px 0px 10px 5px #cccccc;
     }
 
     .threecolumns img {
       width: 100%;
-      height: 250px; /* taller images */
-      border-radius: 10px;
-      margin-bottom: 20px;
-      object-fit: cover;
-    }
-
-    .threecolumns h2 {
-      font-size: 28px;
-      margin: 15px 0;
-    }
-
-    .threecolumns p {
-      font-size: 16px;
-      line-height: 1.6;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      object-fit: contain; /* show full image, not cropped */
     }
 
     .threecolumns a {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 10px;
       color: #9aa982;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
     }
 
     .threecolumns a:hover {
       color: #ffdc74;
     }
 
-    /* Favorite Things column (middle, bigger) */
+    /* Middle column slightly wider */
     .favorite-column {
-      flex: 1.5; /* noticeably wider */
+      flex: 1.1;
     }
 
     /* Footer */
@@ -164,6 +156,17 @@
       padding: 15px;
       width: 100%;
       font-size: 12px;
+    }
+
+    /* Responsive (mobile view) */
+    @media (max-width: 900px) {
+      .columns-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .threecolumns {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -190,8 +193,8 @@
   <!-- Three Columns Section -->
   <main>
     <div class="columns-container">
+
       <div class="threecolumns">
-        <img src="about.jpg" alt="About Me Image">
         <img src="IMG_2796.jpg" alt="Graduation Photo">
         <h2>About Me</h2>
         <p>A little introduction about me and my background.</p>
@@ -199,7 +202,6 @@
       </div>
 
       <div class="threecolumns favorite-column">
-        <img src="favorite.jpg" alt="Favorite Things Image">
         <img src="DSC_0012.png" alt="Truck Photo">
         <h2>My Favorite Things</h2>
         <p>Check out the things I enjoy most in life.</p>
@@ -207,12 +209,12 @@
       </div>
 
       <div class="threecolumns">
-        <img src="contact.jpg" alt="Contact Me Image">
         <img src="IMG_5737.jpg" alt="Contact Photo">
         <h2>Contact Me</h2>
         <p>If you’d like to hire me or have more questions, here’s my info so we can connect.</p>
         <a href="ContactMeFilthy.html">Get in Touch</a>
       </div>
+
     </div>
   </main>
 
