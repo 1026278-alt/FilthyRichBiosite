@@ -9,14 +9,15 @@
 
   <style>
     body {
-      background-color: #f0ead6; /* eggshell background */
+      background-color: #f0ead6;
       margin: 0;
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      padding: 0 20px;
+      padding: 0;
+      overflow-x: hidden;
     }
 
     /* Headline */
@@ -55,7 +56,7 @@
       100% { opacity: 0; }
     }
 
-    /* Navigation bar */
+    /* Navbar */
     .navbar {
       background-color: transparent;
       font-size: 20px;
@@ -65,7 +66,6 @@
       font-weight: 700;
     }
 
-    /* Styled nav buttons */
     .navbar a {
       display: inline-block;
       padding: 10px 20px;
@@ -80,6 +80,7 @@
     .navbar a:hover {
       background-color: #ffdc74;
       color: #9aa982;
+      transform: scale(1.05);
     }
 
     .navbar span {
@@ -87,28 +88,91 @@
       font-weight: bold;
     }
 
-    /* Paragraph styling */
-    .about-paragraph {
-      max-width: 800px;
-      margin: 20px 0;
-      padding: 20px;
-      border-radius: 10px;
-      color: #333;
-      font-size: 18px;
-      line-height: 1.6;
+    /* Divider */
+    .divider {
+      width: 120px;
+      height: 4px;
+      background-color: #9aa982;
+      border-radius: 2px;
+      margin: 20px 0 40px 0;
+      animation: pulse 3s infinite ease-in-out;
     }
 
-    .para1 { background-color: #e7e4d9; } /* subtle cream */
-    .para2 { background-color: #dce3c9; } /* light greenish */
-    .para3 { background-color: #f2e6d9; } /* light peach */
+    @keyframes pulse {
+      0%, 100% { transform: scaleX(1); opacity: 0.8; }
+      50% { transform: scaleX(1.2); opacity: 1; }
+    }
 
-    /* Video styling */
+    /* Section layout */
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.6s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    /* Section text */
+    .section-text {
+      flex: 1;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .section-text strong {
+      color: #9aa982;
+    }
+
+    /* Section image */
+    .section img {
+      flex: 1;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: all 0.5s ease;
+    }
+
+    .section img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    /* Video */
     .video-container {
       max-width: 800px;
-      margin: 30px 0;
-      border-radius: 10px;
+      margin: 60px 0;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .video-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     }
 
     iframe {
@@ -117,24 +181,51 @@
       border: none;
     }
 
-    /* Image styling */
-    .styled-image {
-      max-width: 400px;
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      margin: 20px 0;
+    /* External link */
+    p {
+      font-size: 18px;
+      color: #333;
     }
 
-    /* External link */
     .external-link {
       color: #ffdc74;
       text-decoration: underline;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     .external-link:hover {
       color: #9aa982;
+      text-shadow: 0 0 6px #ffdc74;
+    }
+
+    /* Floating background texture */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background-image: radial-gradient(#9aa98220 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+      animation: floatBG 30s linear infinite;
+    }
+
+    @keyframes floatBG {
+      from { transform: translate(0, 0); }
+      to { transform: translate(50px, 50px); }
+    }
+
+    @media (max-width: 800px) {
+      .section {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      .section img {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -147,7 +238,7 @@
     <span>Here at Filthy Rich Industries</span>
   </div>
 
-  <!-- Navigation bar -->
+  <!-- Navbar -->
   <div class="navbar"> 
      <span>|</span> <a href="index.html">Home</a>
     <span>|</span> <a href="aboutme.html">About Me</a>
@@ -155,31 +246,54 @@
     <span>|</span> <a href="contactme.html">Contact Me</a> <span>|</span>
   </div> 
 
-  <!-- About paragraphs -->
-  <div class="about-paragraph para1">
-    Hi! I’m Angel, a passionate web and graphic designer. I love creating modern websites with unique styles and clean layouts. My skills include HTML, CSS, and a bit of JavaScript for interactive projects.
+  <div class="divider"></div>
+
+  <!-- SECTION 1 -->
+  <div class="section para1">
+    <div class="section-text">
+      My journey as a creator began with coding simple layouts in <strong>HTML and CSS</strong>. Over time, I discovered the power of transforming ideas into living, breathing designs. Each project I take on—whether it’s a personal portfolio or a client’s vision—pushes me to reach higher and turn imagination into reality. I am passionate, hard-working, and constantly striving to make every page reflect both function and beauty.
+    </div>
+    <img src="https://via.placeholder.com/400x300.png?text=Design+In+Progress" alt="Coding and Design Workspace"> <!-- Replace with your image -->
   </div>
 
-  <div class="about-paragraph para2">
-    When I’m not coding, I enjoy exploring design tools like Photoshop and Illustrator to craft eye-catching graphics. I also like experimenting with animations and video editing to make my projects more dynamic.
+  <!-- SECTION 2 -->
+  <div class="section para2">
+    <div class="section-text">
+      Beyond the code, my world expands into <strong>graphic design and branding</strong>. I’ve worked with people to design logos, posters, websites, and polished photos through <strong>Illustrator and Photoshop</strong>. I love building brand names that carry meaning and visuals that leave a lasting impact. For me, design is never just about looking good—it’s about telling a story and bringing out the identity behind every project.
+    </div>
+    <img src="https://via.placeholder.com/400x300.png?text=Logo+and+Branding" alt="Branding Project"> <!-- Replace with your image -->
   </div>
 
-  <div class="about-paragraph para3">
-    Beyond design, I love sports, music, and staying active. I constantly seek inspiration from both the digital world and everyday life to keep my creativity fresh.
+  <!-- SECTION 3 -->
+  <div class="section para3">
+    <div class="section-text">
+      My creativity doesn’t stop at the screen. I find inspiration in <strong>sports, music, dance, and singing</strong>, which fuel my imagination and sharpen my sense of rhythm and style. These passions allow me to visualize beyond the ordinary and transform what others might overlook into something beautiful. It’s this blend of discipline and artistry that makes me not just a designer, but a storyteller of visuals and ideas.
+    </div>
+    <img src="https://via.placeholder.com/400x300.png?text=Inspiration+and+Movement" alt="Creative inspiration"> <!-- Replace with your image -->
   </div>
 
-  <!-- Embedded video -->
+  <!-- VIDEO -->
   <div class="video-container">
     <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="My favorite video" allowfullscreen></iframe>
   </div>
-
-  <!-- Styled image -->
-  <img src="https://via.placeholder.com/400x250.png?text=Me+at+Work" alt="Me working on design" class="styled-image">
 
   <!-- External link -->
   <p>Check out my favorite design resource: 
     <a href="https://www.behance.net" target="_blank" class="external-link">Behance</a>
   </p>
+
+  <!-- Scroll Fade-in -->
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+  </script>
 
 </body>
 </html>
