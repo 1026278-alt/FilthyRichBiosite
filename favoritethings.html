@@ -16,7 +16,6 @@
       min-height: 100vh;
     }
 
-    /* Headline */
     .headline {
       text-align: center;
       background: #9aa982;
@@ -52,7 +51,6 @@
       100% { opacity: 0; }
     }
 
-    /* Navbar */
     .navbar {
       background-color: transparent;
       font-size: 25px;
@@ -83,7 +81,6 @@
       font-weight: bold;
     }
 
-    /* Gallery grid */
     .gallery-container {
       max-width: 1200px;
       width: 90%;
@@ -94,11 +91,11 @@
     }
 
     .gallery-card {
-      background: #b8c9a5; /* lighter green background */
+      background: #b8c9a5;
       border-radius: 12px;
       overflow: hidden;
       text-align: center;
-      color: #ffdc74; /* yellow text */
+      color: #ffdc74;
       transition: transform 0.3s, box-shadow 0.3s;
       padding: 15px;
       display: flex;
@@ -136,7 +133,6 @@
       color: #fff6c8;
     }
 
-    /* Lightbox modal */
     .lightbox-modal {
       display: none;
       position: fixed;
@@ -168,7 +164,6 @@
       cursor: pointer;
     }
 
-    /* Responsive */
     @media screen and (max-width: 992px) {
       .gallery-container { grid-template-columns: repeat(2, 1fr); }
     }
@@ -197,14 +192,14 @@
   <div class="gallery-container">
     <!-- Row 1 -->
     <div class="gallery-card">
-      <img src="https://via.placeholder.com/400x300?text=Item+1" alt="Favorite Thing 1" onclick="openLightbox(this)">
-      <h3>Favorite Thing 1</h3>
-      <p>Description of favorite thing 1.</p>
+      <img src="img1.jpg" alt="Filthy Rich Cartoon" onclick="openLightbox(this)">
+      <h3>Filthy Rich Cartoon</h3>
+      <p>Fun logo artwork showing the Filthy Rich cartoon style.</p>
     </div>
     <div class="gallery-card">
-      <img src="https://via.placeholder.com/400x300?text=Item+2" alt="Favorite Thing 2" onclick="openLightbox(this)">
-      <h3>Favorite Thing 2</h3>
-      <p>Description of favorite thing 2.</p>
+      <img src="DOG 11.jpg" alt="Dog Picture" onclick="openLightbox(this)">
+      <h3>Dog Portrait</h3>
+      <p>My adorable pup portrait.</p>
     </div>
     <div class="gallery-card">
       <img src="https://via.placeholder.com/400x300?text=Item+3" alt="Favorite Thing 3" onclick="openLightbox(this)">
@@ -214,36 +209,36 @@
 
     <!-- Row 2 -->
     <div class="gallery-card">
+      <img src="BMC.png" alt="BMC Capital Logo" onclick="openLightbox(this)">
+      <h3>BMC Capital Logo</h3>
+      <p>Logo representing a company/project I admire.</p>
+    </div>
+    <div class="gallery-card">
       <img src="FILTHYCIRCLE.png" alt="Filthy Rich Logo" onclick="openLightbox(this)">
       <h3>Filthy Rich Logo</h3>
       <p>The iconic Filthy Rich logo representing style and brand.</p>
     </div>
     <div class="gallery-card">
-      <img src="BMC.png" alt="BMC Capital Logo" onclick="openLightbox(this)">
-      <h3>BMC Capital Logo</h3>
-      <p>Logo representing a company/project I admire.</p>
+      <img src="BMCSS.png" onclick="openLightbox(this)">
+      <h3>Favorite Thing 2</h3>
+      <p>Description of favorite thing 2.</p>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="gallery-card">
+      <img src="p5BolanosHarper1-Recovered.jpg">
+      <h3>Favorite Thing 7</h3>
+      <p>Description of favorite thing 7.</p>
     </div>
     <div class="gallery-card">
       <img src="FINAL REACH PROJECT.png" alt="Food Drive Poster" onclick="openLightbox(this)">
       <h3>Food Drive Poster</h3>
       <p>Poster from a community food drive project I contributed to.</p>
     </div>
-
-    <!-- Row 3 -->
     <div class="gallery-card">
-      <img src="https://via.placeholder.com/400x300?text=Item+7" alt="Favorite Thing 7" onclick="openLightbox(this)">
-      <h3>Favorite Thing 7</h3>
-      <p>Description of favorite thing 7.</p>
-    </div>
-    <div class="gallery-card">
-      <img src="https://via.placeholder.com/400x300?text=Item+8" alt="Favorite Thing 8" onclick="openLightbox(this)">
-      <h3>Favorite Thing 8</h3>
-      <p>Description of favorite thing 8.</p>
-    </div>
-    <div class="gallery-card">
-      <img src="https://via.placeholder.com/400x300?text=Item+9" alt="Favorite Thing 9" onclick="openLightbox(this)">
-      <h3>Favorite Thing 9</h3>
-      <p>Description of favorite thing 9.</p>
+      <img src="HERO FINAL.jpg" alt="Hero Poster" onclick="openLightbox(this)">
+      <h3>Hero Poster</h3>
+      <p>Epic hero collage poster.</p>
     </div>
   </div>
 
